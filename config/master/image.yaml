@@ -1,0 +1,4 @@
+master:
+  image: "jenkins/jenkins"
+  tag: "2.249.1-lts-alpine"
+  imagePullPolicy: "Always"
