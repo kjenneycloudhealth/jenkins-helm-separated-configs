@@ -1,12 +1,13 @@
 master:
   JCasC:
     configScripts:
-      tool:
-        maven:
-          installations:
-            - name: "maven-3"
-              properties:
-                - installSource:
-                    installers:
-                      - maven:
-                          id: "3.5.4"
+      tool-maven: |
+        tool:
+          maven:
+            installations:
+              - name: "maven-3"
+                properties:
+                  - installSource:
+                      installers:
+                        - maven:
+                            id: "3.5.4"

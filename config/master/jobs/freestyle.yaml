@@ -1,37 +1,40 @@
 master:
-  jobs:
-    - script: >
-        job('Triggered') {
-          parameters {
-            fileParam('build.properties')
-          }
-          steps {
-            copyArtifacts('Triggeranotherjob')
-            environmentVariables {
-              propertiesFile('build.properties')
-            }
-            shell('echo $AMI_ID;cat build.properties')
-          }
-        }
-    - script: >
-        job('Triggeranotherjob') {
-          wrappers {
-            credentialsBinding {
-              string('PASSWORD','PASSWORD')
-            }
-          }
-          steps {
-            shell('echo AMI_ID=test > build.properties;cat build.properties')
-          }
-          publishers {
-            archiveArtifacts('build.properties')
-            downstreamParameterized {
-              trigger('Triggered') {
-                condition('SUCCESS')
+  JCasC:
+    configScripts:
+      freestyle-jobs: |
+        jobs:
+          - script: >
+              job('Triggered') {
                 parameters {
-                  propertiesFile('build.properties', true)
+                  fileParam('build.properties')
+                }
+                steps {
+                  copyArtifacts('Triggeranotherjob')
+                  environmentVariables {
+                    propertiesFile('build.properties')
+                  }
+                  shell('echo $AMI_ID;cat build.properties')
                 }
               }
-            }
-          }
-        }
+          - script: >
+              job('Triggeranotherjob') {
+                wrappers {
+                  credentialsBinding {
+                    string('PASSWORD','PASSWORD')
+                  }
+                }
+                steps {
+                  shell('echo AMI_ID=test > build.properties;cat build.properties')
+                }
+                publishers {
+                  archiveArtifacts('build.properties')
+                  downstreamParameterized {
+                    trigger('Triggered') {
+                      condition('SUCCESS')
+                      parameters {
+                        propertiesFile('build.properties', true)
+                      }
+                    }
+                  }
+                }
+              }

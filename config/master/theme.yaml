@@ -1,10 +1,12 @@
 master:
   JCasC:
     configScripts:
-      simple-theme-plugin:
-        elements:
-          - cssText:
-              text: |-
-                .pipeline-new-node {
-                    display: none;
-                }
+      theme-settings: |
+        unclassified:
+          simple-theme-plugin:
+            elements:
+              - cssText:
+                  text: |-
+                    .pipeline-new-node {
+                        display: none;
+                    }

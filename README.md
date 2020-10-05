@@ -3,16 +3,17 @@
 ## Requirements
 
 * Helm (`brew install helm`)
-* Python 3 (`brew install python@3.8`)
+* yq (`brew install yq`)
 
 ## Configuration
 
 The configuration is broken up into sections to make it easier to manage.
 
-Directions roughly match root elements in **[values.yaml](https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/values.yaml)**.
+Directories roughly match root elements in **[values.yaml](https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/values.yaml)**.
 
 * master - Configuration for Jenkins master
-  * jobs - Definitions for jobs
+  * jobs
+  * tools
 * agents - Define all available Jenkins agents
 * backup - Cron backup job
 * networkPolicy
@@ -20,19 +21,28 @@ Directions roughly match root elements in **[values.yaml](https://github.com/jen
 * rbac
 * serviceAccount
 
-** Figure out how to get secret password values in configuration **
-
-### Generating Configuration
+## Getting Helm chart
 
 ```
-./generate_config.py
+helm repo add jenkinsci https://charts.jenkins.io
 ```
 
-## Standing up Jenkins
+## Build the values
 
-Getting Jenkins up and running after you've generated the complete values.yaml for the Helm chart.
+```
+./generate_config.sh
+```
 
-### Create EKS Cluster
+## Stand up the service in Minikube
+
+```
+minikube start
+kubectl create ns jenkins
+helm install -f /tmp/jenkins_values.yaml -n jenkins jenkins jenkinsci/jenkins
+./minikube-endpoint.sh # Go to the endpoint
+```
+
+## Stand up the service in EKS
 
 Created EKS cluster with `eksctl`
 
@@ -43,18 +53,10 @@ eksctl create cluster --name=jenkins --nodes=4 --auto-kubeconfig --region us-eas
 ### Install Helm Chart
 
 ```
-helm3 install --kubeconfig /Users/kjenney/.kube/eksctl/clusters/jenkins -f /tmp/jenkins_values.yaml jenkins jenkinsci/jenkins
+helm install --kubeconfig /Users/kjenney/.kube/eksctl/clusters/jenkins -f /tmp/jenkins_values.yaml jenkins jenkinsci/jenkins
 ```
 
-### Login to Jenkins
-
-#### Get Admin Password
-
-```
-kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins get secret --namespace default jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode
-```
-
-#### Get the Jenkins URL
+### Get the Jenkins URL
 
 ```
 export POD_NAME=$(kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins get pods --namespace default -l "app.kubernetes.io/component=jenkins-master" -l "app.kubernetes.io/instance=jenkins" -o jsonpath="{.items[0].metadata.name}")

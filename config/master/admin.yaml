@@ -1,7 +1,7 @@
 master:
   adminUser: "admin"
   adminPassword: "admin"
-  admin:
-    existingSecret: ""
-    userKey: jenkins-admin-user
-    passwordKey: jenkins-admin-password
+  #admin:
+  #  existingSecret: ""
+  #  userKey: jenkins-admin-user
+  #  passwordKey: jenkins-admin-password
