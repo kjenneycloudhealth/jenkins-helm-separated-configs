@@ -1,0 +1,4 @@
+master:
+  disabledAgentProtocols:
+    - JNLP-connect
+    - JNLP2-connect

@@ -1,0 +1,52 @@
+master:
+  componentName: "jenkins-master"
+  disableRememberMe: false
+  markupFormatter: plainText
+  customJenkinsLabels: []
+  useSecurity: true
+  securityRealm: |-
+    <securityRealm class="hudson.security.LegacySecurityRealm"/>
+  authorizationStrategy: |-
+     <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+       <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+     </authorizationStrategy>
+  hostNetworking: false
+  jenkinsHome: "/var/jenkins_home"
+  jenkinsRef: "/usr/share/jenkins/ref"
+  rollingUpdate: {}
+  usePodSecurityContext: true
+  runAsUser: 1000
+  fsGroup: 1000
+  servicePort: 8080
+  targetPort: 8080
+  serviceAnnotations: {}
+  deploymentLabels: {}
+  serviceLabels: {}
+  podLabels: {}
+  slaveListenerPort: 50000
+  slaveHostPort:
+  cli: false
+  slaveListenerServiceType: "ClusterIP"
+  slaveListenerServiceAnnotations: {}
+  slaveDefaultsProviderTemplate: ""
+  slaveConnectTimeout: 5
+  slaveReadTimeout: 15
+  slaveKubernetesNamespace:
+  slaveJenkinsUrl:
+  slaveJenkinsTunnel:
+  loadBalancerSourceRanges:
+  - 0.0.0.0/0
+  extraPorts: []
+  initializeOnce: false
+  overwritePluginsFromImage: true
+  enableRawHtmlMarkupFormatter: false
+  scriptApproval: []
+  initScripts: []
+  customInitContainers: []
+  nodeSelector: {}
+  terminationGracePeriodSeconds:
+  tolerations: []
+  podAnnotations: {}
+  deploymentAnnotations: {}
+  hostAliases: []
+  testEnabled: true

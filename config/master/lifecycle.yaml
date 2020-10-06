@@ -1,0 +1,9 @@
+## Pod Lifecycle Events
+
+master:
+  lifecycle:
+  #  postStart:
+    #    exec:
+    #      command:
+    #      - "uname"
+    #      - "-a"

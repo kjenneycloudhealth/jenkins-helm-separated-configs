@@ -1,0 +1,10 @@
+master:
+  JCasC:
+    enabled: true
+    defaultConfig: true
+    configScripts: {}
+    securityRealm: |-
+      legacy
+    authorizationStrategy: |-
+      loggedInUsersCanDoAnything:
+        allowAnonymousRead: false
