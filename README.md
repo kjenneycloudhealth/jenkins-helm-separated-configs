@@ -63,3 +63,9 @@ export POD_NAME=$(kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenk
 echo http://127.0.0.1:8080
 kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins --namespace default port-forward $POD_NAME 8080:8080
 ```
+
+## Get Pod Logs
+
+```
+kubectl logs -n jenkins -c jenkins -l app.kubernetes.io/component=jenkins-master
+```
