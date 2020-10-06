@@ -7,7 +7,7 @@ master:
     - cloudbees-folder:6.14
     - command-launcher:1.4
     - config-file-provider:3.6.3
-    - configuration-as-code:1.43
+    - configuration-as-code:1.41
     - copyartifact:1.45.1
     - credentials-binding:1.23
     - credentials:2.3.12
@@ -19,7 +19,7 @@ master:
     - envinject:2.3.0
     - git-client:3.4.2
     - git-server:1.9
-    - git:4.4.1
+    - git:4.2.2
     - github:1.31.0
     - gradle:1.36
     - greenballs:1.15
@@ -33,7 +33,7 @@ master:
     - jquery3-api:3.5.1-1
     - jsch:0.1.55.2
     - junit:1.32
-    - kubernetes:1.27.1.1
+    - kubernetes:1.25.7
     - lockable-resources:2.9
     - mailer:1.32.1
     - matrix-project:1.17
