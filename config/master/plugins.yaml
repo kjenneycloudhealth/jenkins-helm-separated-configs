@@ -7,7 +7,7 @@ master:
     - cloudbees-folder:6.14
     - command-launcher:1.4
     - config-file-provider:3.6.3
-    - configuration-as-code:1.41
+    - configuration-as-code:1.43
     - copyartifact:1.45.1
     - credentials-binding:1.23
     - credentials:2.3.12
@@ -26,19 +26,19 @@ master:
     - h2-api:1.4.199
     - handlebars:1.1.1
     - htmlpublisher:1.23
-    - jackson2-api:2.11.2
+    - jackson2-api:2.11.3
     - jdk-tool:1.4
     - job-dsl:1.77
     - jquery-detached:1.2.1
     - jquery3-api:3.5.1-1
     - jsch:0.1.55.2
-    - junit:1.32
+    - junit:1.38
     - kubernetes:1.25.7
     - lockable-resources:2.9
     - mailer:1.32.1
     - matrix-project:1.17
     - momentjs:1.1.1
-    - parameterized-trigger:2.35.2
+    - parameterized-trigger:2.39
     - pipeline-build-step:2.13
     - pipeline-graph-analysis:1.10
     - pipeline-input-step:2.12
