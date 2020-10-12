@@ -13,7 +13,7 @@ master:
                   environmentVariables {
                     propertiesFile('build.properties')
                   }
-                  shell('echo $AMI_ID;cat build.properties')
+                  shell('echo $PASSWORD;cat build.properties')
                 }
               }
           - script: >
@@ -24,7 +24,7 @@ master:
                   }
                 }
                 steps {
-                  shell('echo AMI_ID=test > build.properties;cat build.properties')
+                  shell('echo PASSWORD=$PASSWORD > build.properties;cat build.properties')
                 }
                 publishers {
                   archiveArtifacts('build.properties')
