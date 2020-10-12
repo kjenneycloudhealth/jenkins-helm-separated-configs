@@ -137,6 +137,9 @@ master:
   enableRawHtmlMarkupFormatter: false
   scriptApproval: []
   initScripts: []
+  containerEnv:
+    - name: test
+      value: "testcredential"
   jobs: {}
   JCasC:
     enabled: true
