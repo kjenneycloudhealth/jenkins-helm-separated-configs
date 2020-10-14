@@ -5,6 +5,12 @@
 * Helm (`brew install helm`)
 * yq (`brew install yq`)
 
+### Optional
+
+* eksctl (`brew install eksctl`)
+* minikube (`brew install minikube`)
+
+
 ## Configuration
 
 The configuration is broken up into sections to make it easier to manage.
