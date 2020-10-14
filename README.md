@@ -69,3 +69,7 @@ kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins --namespace de
 ```
 kubectl logs -n jenkins -c jenkins -l app.kubernetes.io/component=jenkins-master
 ```
+
+## Configuration Options
+
+Look thru the working examples under config. For additional configuration options check out https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/VALUES_SUMMARY.md.
