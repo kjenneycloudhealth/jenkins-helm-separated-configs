@@ -26,13 +26,13 @@ master:
     - h2-api:1.4.199
     - handlebars:1.1.1
     - htmlpublisher:1.23
-    - jackson2-api:2.11.2
+    - jackson2-api:2.11.3
     - jdk-tool:1.4
     - job-dsl:1.77
     - jquery-detached:1.2.1
     - jquery3-api:3.5.1-1
     - jsch:0.1.55.2
-    - junit:1.32
+    - junit:1.37
     - kubernetes:1.27.1.1
     - lockable-resources:2.9
     - mailer:1.32.1
@@ -73,5 +73,5 @@ master:
     - workflow-job:2.39
     - workflow-multibranch:2.22
     - workflow-scm-step:2.11
-    - workflow-step-api:2.22
+    - workflow-step-api:2.23
     - workflow-support:3.5
