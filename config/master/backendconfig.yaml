@@ -1,0 +1,8 @@
+master:
+  backendconfig:
+    enabled: false
+    apiVersion: "extensions/v1beta1"
+    name:
+    labels: {}
+    annotations: {}
+    spec: {}

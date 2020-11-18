@@ -1,0 +1,5 @@
+master:
+  csrf:
+    defaultCrumbIssuer:
+      enabled: true
+      proxyCompatability: true

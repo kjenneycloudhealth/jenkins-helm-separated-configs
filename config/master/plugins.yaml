@@ -19,7 +19,7 @@ master:
     - envinject:2.3.0
     - git-client:3.4.2
     - git-server:1.9
-    - git:4.4.1
+    - git:4.2.2
     - github:1.31.0
     - gradle:1.36
     - greenballs:1.15
@@ -32,13 +32,13 @@ master:
     - jquery-detached:1.2.1
     - jquery3-api:3.5.1-1
     - jsch:0.1.55.2
-    - junit:1.37
-    - kubernetes:1.27.1.1
+    - junit:1.38
+    - kubernetes:1.25.7
     - lockable-resources:2.9
     - mailer:1.32.1
     - matrix-project:1.17
     - momentjs:1.1.1
-    - parameterized-trigger:2.35.2
+    - parameterized-trigger:2.39
     - pipeline-build-step:2.13
     - pipeline-graph-analysis:1.10
     - pipeline-input-step:2.12

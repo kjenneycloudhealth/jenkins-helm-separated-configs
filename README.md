@@ -5,6 +5,12 @@
 * Helm (`brew install helm`)
 * yq (`brew install yq`)
 
+### Optional
+
+* eksctl (`brew install eksctl`)
+* minikube (`brew install minikube`)
+
+
 ## Configuration
 
 The configuration is broken up into sections to make it easier to manage.
@@ -48,18 +54,16 @@ Created EKS cluster with `eksctl`
 
 ```
 eksctl create cluster --name=jenkins --nodes=4 --auto-kubeconfig --region us-east-1
-```
-
-### Install Helm Chart
-
-```
 helm install --kubeconfig /Users/kjenney/.kube/eksctl/clusters/jenkins -f /tmp/jenkins_values.yaml jenkins jenkinsci/jenkins
+./eks-endpoint.sh # Go to the endpoint
 ```
 
-### Get the Jenkins URL
+## Get Pod Logs
 
 ```
-export POD_NAME=$(kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins get pods --namespace default -l "app.kubernetes.io/component=jenkins-master" -l "app.kubernetes.io/instance=jenkins" -o jsonpath="{.items[0].metadata.name}")
-echo http://127.0.0.1:8080
-kubectl --kubeconfig=/Users/kjenney/.kube/eksctl/clusters/jenkins --namespace default port-forward $POD_NAME 8080:8080
+kubectl logs -n jenkins -c jenkins -l app.kubernetes.io/component=jenkins-master
 ```
+
+## Configuration Options
+
+Look thru the working examples under config. For additional configuration options check out https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/VALUES_SUMMARY.md.

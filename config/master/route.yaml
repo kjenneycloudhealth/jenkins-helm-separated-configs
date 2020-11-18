@@ -1,0 +1,5 @@
+master:
+  route:
+    enabled: false
+    labels: {}
+    annotations: {}

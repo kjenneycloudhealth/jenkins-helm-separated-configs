@@ -1,0 +1,9 @@
+master:
+  ingress:
+    enabled: false
+    paths: []
+    apiVersion: "extensions/v1beta1"
+    labels: {}
+    annotations: {}
+    hostName:
+    tls:

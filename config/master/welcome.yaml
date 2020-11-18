@@ -3,4 +3,4 @@ master:
     configScripts:
       welcome-message: |
         jenkins:
-          systemMessage: Jenkins configured automatically by Jenkins Configuration as Code plugin
+          systemMessage: Suped-up Jenkins on Kubernetes!!!

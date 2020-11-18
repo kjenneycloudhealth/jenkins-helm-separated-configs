@@ -1,0 +1,10 @@
+master:
+  healthProbes: true
+  healthProbesLivenessTimeout: 5
+  healthProbesReadinessTimeout: 5
+  healthProbeLivenessPeriodSeconds: 10
+  healthProbeReadinessPeriodSeconds: 10
+  healthProbeLivenessFailureThreshold: 5
+  healthProbeReadinessFailureThreshold: 3
+  healthProbeLivenessInitialDelay: 90
+  healthProbeReadinessInitialDelay: 60

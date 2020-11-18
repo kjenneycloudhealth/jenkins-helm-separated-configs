@@ -1,0 +1,8 @@
+master:
+  containerEnv:
+    - name: sql_user
+      value: "root"
+    - name: sql_password
+      value: "password"
+    - name: test
+      value: "testcredential"
