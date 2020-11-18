@@ -12,7 +12,7 @@ master:
                     scm {
                       git{
                         remote {
-                          github('kjenney/kubernetes-job1')
+                          github('kjenneycloudhealth/kubernetes-job1')
                         }
                         branch('master')
                       }
