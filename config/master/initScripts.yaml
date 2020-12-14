@@ -1,0 +1,45 @@
+master:
+  initScripts:
+    - |
+      import jenkins.model.*
+      jenkins = Jenkins.instance
+      import jenkins.plugins.git.GitSCMSource
+      import org.jenkinsci.plugins.workflow.libs.GlobalLibraries
+      import org.jenkinsci.plugins.workflow.libs.LibraryConfiguration
+      import org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever
+
+      /*
+       * add shared libraries
+       * see https://jenkins.io/doc/book/pipeline/shared-libraries/
+       */
+
+      GlobalLibraries globalLibraries = Jenkins.instance.getExtensionList(GlobalLibraries).first()
+
+      LibraryConfiguration myImplicitLibraryConfiguration = new LibraryConfiguration(
+          "upstream-library-implicit",
+          new SCMSourceRetriever(new GitSCMSource("https://github.com/jenkins-infra/pipeline-library.git"))
+      )
+      myImplicitLibraryConfiguration.implicit = true
+      myImplicitLibraryConfiguration.defaultVersion = "master" // or commit or branch
+      myImplicitLibraryConfiguration.allowVersionOverride = false // pipelines may not override default version
+      myImplicitLibraryConfiguration.includeInChangesets = false // don not add library changes in pipline log
+
+      LibraryConfiguration myExplicitLibraryConfiguration = new LibraryConfiguration(
+          "upstream-library-explicit",
+          new SCMSourceRetriever(new GitSCMSource("https://github.com/jenkins-infra/pipeline-library.git"))
+      )
+      myExplicitLibraryConfiguration.implicit = false
+      myExplicitLibraryConfiguration.defaultVersion = "master" // or commit or branch
+      myExplicitLibraryConfiguration.allowVersionOverride = false // pipelines may not override default version
+      myExplicitLibraryConfiguration.includeInChangesets = false // don not add library changes in pipline log
+
+      LibraryConfiguration mySharedLibraryConfiguration = new LibraryConfiguration(
+          "shared-library",
+          new SCMSourceRetriever(new GitSCMSource("https://github.com/kjenney/jenkins-shared-library.git"))
+      )
+      mySharedLibraryConfiguration.implicit = true
+      mySharedLibraryConfiguration.defaultVersion = "v0.1"
+      mySharedLibraryConfiguration.allowVersionOverride = false // pipelines may not override default version
+      mySharedLibraryConfiguration.includeInChangesets = false // don not add library changes in pipline log
+
+      globalLibraries.libraries = [myImplicitLibraryConfiguration, myExplicitLibraryConfiguration, mySharedLibraryConfiguration]
