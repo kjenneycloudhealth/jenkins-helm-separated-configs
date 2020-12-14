@@ -41,7 +41,6 @@ master:
   overwritePluginsFromImage: true
   enableRawHtmlMarkupFormatter: false
   scriptApproval: []
-  initScripts: []
   customInitContainers: []
   nodeSelector: {}
   terminationGracePeriodSeconds:
