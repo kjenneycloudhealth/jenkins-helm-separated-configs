@@ -4,7 +4,16 @@ master:
     defaultConfig: true
     configScripts: {}
     securityRealm: |-
-      legacy
+      local:
+        allowsSignup: false
+        users:
+         - id: ken
+           name: Ken
+           description: "Da Man"
+           password: testpass
+           properties:
+            - mailer:
+                emailAddress: "test@example.com"
     authorizationStrategy: |-
       loggedInUsersCanDoAnything:
         allowAnonymousRead: false
