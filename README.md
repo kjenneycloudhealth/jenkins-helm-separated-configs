@@ -58,7 +58,7 @@ Created EKS cluster with `eksctl`
 
 ```
 eksctl create cluster --name=jenkins --nodes=4 --auto-kubeconfig --region us-east-1
-helm install --kubeconfig /Users/kjenney/.kube/eksctl/clusters/jenkins -f /tmp/jenkins_values.yaml jenkins jenkinsci/jenkins
+helm install --kubeconfig /Users/kjenney/.kube/eksctl/clusters/jenkins -f /tmp/jenkins_values.yaml jenkins jenkinsci/jenkins --namespace jenkins --version 3.2.0
 ./eks-endpoint.sh # Go to the endpoint
 ```
 
@@ -76,7 +76,8 @@ helm upgrade jenkins jenkinsci/jenkins -f /tmp/jenkins_values.yaml  --namespace 
 ## Get Pod Logs
 
 ```
-kubectl logs -n jenkins -c jenkins -l app.kubernetes.io/component=jenkins-master
+kubectl logs -n jenkins jenkins-0 -c init  # Init container where plugins are installed
+kubectl logs -n jenkins jenkins-0 -c jenkins # Jenkins controller coming up
 ```
 
 ## Configuration Options
