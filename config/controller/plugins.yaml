@@ -73,7 +73,7 @@ controller:
     - ssh-slaves:1.31.5
     - structs:1.22
     - timestamper:1.11.5
-    - token-macro:2.13
+    - token-macro:2.15
     - trilead-api:1.0.13
     - workflow-aggregator:2.6
     - workflow-api:2.41
