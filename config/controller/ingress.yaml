@@ -1,8 +1,9 @@
-master:
-  backendconfig:
+controller:
+  ingress:
     enabled: false
+    paths: []
     apiVersion: "extensions/v1beta1"
-    name:
     labels: {}
     annotations: {}
-    spec: {}
+    hostName:
+    tls:

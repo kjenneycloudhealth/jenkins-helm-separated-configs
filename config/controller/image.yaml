@@ -1,5 +1,5 @@
-master:
+controller:
   image: "jenkins/jenkins"
-  tag: "2.249.1-lts-alpine"
+  tag: "2.270-alpine"
   imagePullPolicy: "Always"
   imagePullSecretName:

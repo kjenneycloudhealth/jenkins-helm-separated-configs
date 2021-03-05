@@ -1,4 +1,4 @@
-master:
+controller:
   JCasC:
     configScripts:
       pipeline-jobs: |
@@ -12,7 +12,7 @@ master:
                     scm {
                       git{
                         remote {
-                          github('kjenneycloudhealth/kubernetes-job1')
+                          github('kjenney/kubernetes-job1')
                         }
                         branch('master')
                       }

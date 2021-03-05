@@ -1,4 +1,4 @@
-master:
+controller:
   sidecars:
     configAutoReload:
       enabled: true

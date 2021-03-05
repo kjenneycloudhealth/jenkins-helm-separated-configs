@@ -1,4 +1,4 @@
-master:
+controller:
   # Expose Prometheus metrics
   prometheus:
     # If enabled, add the prometheus plugin to the list of plugins to install

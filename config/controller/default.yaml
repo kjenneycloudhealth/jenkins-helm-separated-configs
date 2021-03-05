@@ -1,9 +1,9 @@
-master:
-  componentName: "jenkins-master"
+controller:
+  componentName: "jenkins-controller"
   disableRememberMe: false
   markupFormatter: plainText
   customJenkinsLabels: []
-  useSecurity: true
+  adminSecret: true
   securityRealm: |-
     <securityRealm class="hudson.security.LegacySecurityRealm"/>
   authorizationStrategy: |-
@@ -23,17 +23,17 @@ master:
   deploymentLabels: {}
   serviceLabels: {}
   podLabels: {}
-  slaveListenerPort: 50000
-  slaveHostPort:
+  agentListenerPort: 50000
+  agentHostPort:
   cli: false
-  slaveListenerServiceType: "ClusterIP"
-  slaveListenerServiceAnnotations: {}
-  slaveDefaultsProviderTemplate: ""
-  slaveConnectTimeout: 5
-  slaveReadTimeout: 15
-  slaveKubernetesNamespace:
-  slaveJenkinsUrl:
-  slaveJenkinsTunnel:
+  agentListenerServiceType: "ClusterIP"
+  agentListenerServiceAnnotations: {}
+  agentDefaultsProviderTemplate: ""
+  agentConnectTimeout: 5
+  agentReadTimeout: 15
+  agentKubernetesNamespace:
+  agentJenkinsUrl:
+  agentJenkinsTunnel:
   loadBalancerSourceRanges:
   - 0.0.0.0/0
   extraPorts: []

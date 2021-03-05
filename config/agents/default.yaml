@@ -6,7 +6,7 @@ agent:
   customJenkinsLabels: []
   # name of the secret to be used for image pulling
   imagePullSecretName:
-  componentName: "jenkins-slave"
+  componentName: "jenkins-agent"
   privileged: false
   runAsUser:
   runAsGroup:
@@ -54,5 +54,5 @@ agent:
   yamlTemplate: ""
   yamlMergeStrategy: "override"
   # Timeout in seconds for an agent to be online
-  slaveConnectTimeout: 100
+  connectTimeout: 100
   podTemplates: {}

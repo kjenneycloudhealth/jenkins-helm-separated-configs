@@ -1,4 +1,4 @@
-master:
+controller:
   disabledAgentProtocols:
     - JNLP-connect
     - JNLP2-connect

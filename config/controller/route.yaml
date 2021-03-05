@@ -1,4 +1,4 @@
-master:
+controller:
   route:
     enabled: false
     labels: {}

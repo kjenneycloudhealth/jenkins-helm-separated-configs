@@ -1,6 +1,6 @@
 ## Pod Lifecycle Events
 
-master:
+controller:
   lifecycle:
   #  postStart:
     #    exec:
